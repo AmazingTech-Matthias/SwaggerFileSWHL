@@ -9,7 +9,7 @@
   "schemes": ["https"],
   "produces": ["application/json"],
   "paths": {
-    "/_api/web/lists/GetByTitle/{listTitle}/items({itemId})": {
+    "/_api/web/lists/GetByTitle('{listTitle}')/items({itemId})": {
       "get": {
         "operationId": "GetItem",
         "parameters": [
@@ -47,4 +47,5 @@
       "additionalProperties": true
     }
   }
+
 }
