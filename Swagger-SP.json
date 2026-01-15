@@ -1,46 +1,36 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "K2 REST Get Items API",
-    "description": "Swagger 2.0 descriptor for getting items via K2 REST API",
-    "version": "1.0.0"
+    "title": "K2 SharePoint Get Items",
+    "version": "1.0"
   },
   "host": "demo.traveport-test.de",
   "schemes": [
     "https"
   ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
   "paths": {
-    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items": {
+    "/{sitePath}/_api/web/lists/GetByTitle/{listTitle}/items": {
       "get": {
-        "summary": "Get items",
         "operationId": "GetItems",
         "parameters": [
           {
             "name": "sitePath",
             "in": "path",
             "required": true,
-            "type": "string",
-            "description": "Site relative path (e.g. raeume/projekt-54)"
+            "type": "string"
           },
           {
             "name": "listTitle",
             "in": "path",
             "required": true,
-            "type": "string",
-            "description": "List title"
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "schema": {
-              "$ref": "#/definitions/GetItemsResponse"
+              "type": "object"
             }
           },
           "401": {
@@ -51,31 +41,6 @@
           }
         }
       }
-    }
-  },
-  "definitions": {
-    "GetItemsResponse": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Item"
-          }
-        }
-      }
-    },
-    "Item": {
-      "type": "object",
-      "properties": {
-        "Id": {
-          "type": "integer"
-        },
-        "Title": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": true
     }
   }
 }
