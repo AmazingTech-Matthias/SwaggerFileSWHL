@@ -17,10 +17,10 @@
     "application/json"
   ],
   "paths": {
-    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items?$select=Id,Title": {
+    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items({itemId})": {
       "get": {
-        "summary": "Get list items",
-        "operationId": "GetListItems",
+        "summary": "Get Item",
+        "operationId": "GetListItemById",
         "parameters": [
           {
             "name": "sitePath",
@@ -35,6 +35,12 @@
             "description": "Title of the SharePoint list",
             "required": true,
             "type": "string"
+          },
+          {
+        "name": "itemId",
+        "in": "path",
+        "required": true,
+        "type": "integer"
           }
         ],
         "responses": {
@@ -81,3 +87,4 @@
   }
 
 }
+
