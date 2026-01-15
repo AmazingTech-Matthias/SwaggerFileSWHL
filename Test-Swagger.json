@@ -47,7 +47,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/SharePointListItemsResponse"
+              "$ref": "#/definitions/ListItem"
             }
           },
           "401": {
@@ -59,24 +59,14 @@
         }
       }
     }
-  },
+ },
   "definitions": {
-    "SharePointListItemsResponse": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SharePointListItem"
-          }
-        }
-      }
-    },
-    "SharePointListItem": {
+    "ListItem": {
       "type": "object",
       "properties": {
         "Id": {
-          "type": "integer"
+          "type": "integer",
+          "format": "int32"
         },
         "Title": {
           "type": "string"
@@ -85,6 +75,4 @@
       "additionalProperties": true
     }
   }
-
 }
-
