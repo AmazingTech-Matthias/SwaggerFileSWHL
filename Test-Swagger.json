@@ -17,7 +17,7 @@
     "application/json"
   ],
   "paths": {
-    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items": {
+    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items?$select=Id,Title": {
       "get": {
         "summary": "Get list items",
         "operationId": "GetListItems",
@@ -25,7 +25,7 @@
           {
             "name": "sitePath",
             "in": "path",
-            "description": "Site relative path (e.g. raeume/projekt-54)",
+            "description": "Site relative path",
             "required": true,
             "type": "string"
           },
@@ -79,4 +79,5 @@
       "additionalProperties": true
     }
   }
+
 }
