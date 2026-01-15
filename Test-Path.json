@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/_api/web/lists/GetByTitle/{listTitle}/items": {
+    "/_api/web/lists/GetByTitle('{listTitle}')/items": {
       "get": {
         "operationId": "GetItems",
         "parameters": [
@@ -66,4 +66,5 @@
       "additionalProperties": true
     }
   }
+
 }
