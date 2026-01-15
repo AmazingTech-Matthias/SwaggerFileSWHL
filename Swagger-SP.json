@@ -9,7 +9,7 @@
     "https"
   ],
   "paths": {
-    "/{sitePath}/_api/web/lists/GetByTitle/{listTitle}/items": {
+    "/{sitePath}/_api/web/lists/GetByTitle('{listTitle}')/items": {
       "get": {
         "operationId": "GetItems",
         "parameters": [
@@ -44,3 +44,4 @@
     }
   }
 }
+
