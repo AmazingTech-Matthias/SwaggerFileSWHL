@@ -60,7 +60,7 @@
                 "type": "string"
               }
                 
-              },"additionalProperties": true
+              }
             }
           }
         }
@@ -68,4 +68,5 @@
     }
   }
 }
+
 
