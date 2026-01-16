@@ -1,0 +1,61 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SharePoint 2019 – Get All List Items",
+    "version": "1.0.0"
+  },
+  "host": "demo.traveport-test.de",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/{SiteUrl}/_api/web/lists/GetByTitle('{ListTitle}')/items": {
+      "get": {
+        "tags": ["SharePoint"],
+        "summary": "Get all list items",
+        "operationId": "GetAllListItems",
+        "parameters": [
+          {
+            "name": "SiteUrl",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Site relative URL (e.g. sites/CRM)"
+          },
+          {
+            "name": "ListTitle",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "List title"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OData verbose list response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ListItems"
+              }
+          }
+        }
+      }
+    }
+  },
+      "definitions": {
+        "ListItems": {
+        "type": "object",
+        "properties": {
+            "Id": {
+            "type": "integer",
+            "format": "int32"
+            },
+            "Title": {
+            "type": "string"
+        }
+      }
+    }
+  }
+ }
+}
