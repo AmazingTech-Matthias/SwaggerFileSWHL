@@ -11,8 +11,8 @@
 		"/{SiteUrl}/_api/web/lists/GetByTitle('{ListTitle}')/GetItemById({ItemId})": {
 			"get": {
 				"tags": ["Sites"],
-				"description": "Get list item metadata",
-				"operationId": "GetListItemMetadata",
+				"description": "Get list item",
+				"operationId": "GetListItem",
 				"produces": ["application/json"],
 				"parameters": [{
 						"name": "SiteUrl",
@@ -72,4 +72,5 @@
 			"description": "Operations about Sites"
 		}
 	]
+
 }
