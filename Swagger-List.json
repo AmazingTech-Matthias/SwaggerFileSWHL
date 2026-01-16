@@ -11,9 +11,8 @@
   "paths": {
     "/{SiteUrl}/_api/web/lists/GetByTitle('{ListTitle}')/items": {
       "get": {
-        "tags": ["SharePoint"],
-        "summary": "Get all list items",
         "operationId": "GetAllListItems",
+        "summary": "Get all items from a SharePoint list",
         "parameters": [
           {
             "name": "SiteUrl",
@@ -27,7 +26,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "List title"
+            "description": "SharePoint list title"
           }
         ],
         "responses": {
@@ -42,32 +41,40 @@
     }
   },
   "definitions": {
-  "ODataVerboseListResponse": {
-    "type": "object",
-    "properties": {
-      "d": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "Id": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "Title": {
-                  "type": "string"
-                }
-              },
-              "additionalProperties": true
+    "ODataVerboseListResponse": {
+      "type": "object",
+      "properties": {
+        "d": {
+          "type": "object",
+          "properties": {
+            "results": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
             }
           }
         }
       }
+    },
+    "ListItem": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Title": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
     }
   }
- }
 }
+
+
+
+
+
 
