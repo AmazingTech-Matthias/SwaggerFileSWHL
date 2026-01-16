@@ -6,7 +6,6 @@
   },
   "host": "demo.traveport-test.de",
   "schemes": ["https"],
-  "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
     "/{SiteUrl}/_api/web/lists/GetByTitle('{ListTitle}')/items": {
@@ -34,28 +33,41 @@
           "200": {
             "description": "OData verbose list response",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ListItems"
-              }
+              "$ref": "#/definitions/ODataVerboseListResponse"
+            }
           }
         }
       }
     }
   },
-      "definitions": {
-        "ListItems": {
-        "type": "object",
-        "properties": {
-            "Id": {
-            "type": "integer",
-            "format": "int32"
-            },
-            "Title": {
-            "type": "string"
+  "definitions": {
+    "ListItem": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Title": {
+          "type": "string"
+        }
+      }
+    },
+    "ODataVerboseListResponse": {
+      "type": "object",
+      "properties": {
+        "d": {
+          "type": "object",
+          "properties": {
+            "results": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ListItem"
+              }
+            }
+          }
         }
       }
     }
   }
- }
 }
