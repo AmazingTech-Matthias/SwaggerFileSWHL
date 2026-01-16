@@ -21,7 +21,8 @@
 						"required": true,
 						"type": "string",
 						"x-example": "Sales"
-					}, {
+					}, 
+                    {
 						"name": "ListTitle",
 						"in": "path",
 						"description": "List title",
@@ -42,6 +43,7 @@
 							                "$ref": "#/definitions/GetListItems"
 							            }
 						             }
+                                }
                          },
                          "401": {
                         "description": "Unauthorized – authentication failed or missing"
@@ -72,4 +74,6 @@
 			}
 		}
 	}
+  }
 }
+  
