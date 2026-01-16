@@ -42,8 +42,6 @@
   },
   "definitions": {
     "ODataVerboseListResponse": {
-      "type": "object",
-      "properties": {
         "d": {
           "type": "object",
           "properties": {
@@ -55,7 +53,6 @@
             }
           }
         }
-      }
     },
     "ListItem": {
       "type": "object",
@@ -72,6 +69,7 @@
     }
   }
 }
+
 
 
 
