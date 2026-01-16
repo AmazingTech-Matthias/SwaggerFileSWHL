@@ -71,9 +71,11 @@
 					"type": "string",
 					"x-example": "Test deck"
 				}
-			}
+			},
+			"additionalProperties": true
 		}
 	}
   }
 }
   
+
