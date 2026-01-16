@@ -42,34 +42,32 @@
     }
   },
   "definitions": {
-    "ODataVerboseListResponse": {
-      "type": "object",
-      "properties": {
-        "d": {
-          "type": "object",
-          "properties": {
-            "results": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ListItem"
-              }
+  "ODataVerboseListResponse": {
+    "type": "object",
+    "properties": {
+      "d": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "Title": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
             }
           }
         }
       }
-    },
-    "ListItem": {
-      "type": "object",
-      "properties": {
-        "Id": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "Title": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": true
     }
   }
+ }
 }
+
