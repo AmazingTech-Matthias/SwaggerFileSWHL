@@ -37,15 +37,15 @@
 							"type": "array",
 							"items":{
 							"$ref": "#/definitions/GetListItems"
-							}
+							    }
 						 }
-                         },
-                         "401": {
-                        "description": "Unauthorized – authentication failed or missing"
-                                },
-                         "404": {
-                        "description": "Not Found – site or list does not exist"
-                           }
+                },
+                "401": {
+              "description": "Unauthorized – authentication failed or missing"
+                      },
+                "404": {
+              "description": "Not Found – site or list does not exist"
+                  }
 				}
 			}
 			
