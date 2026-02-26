@@ -5,7 +5,7 @@
     "title": "SharePoint Create List Item API",
     "description": "API to create a new item in a specific SharePoint list"
   },
-  "host": "demo.traveport-test.de/",
+  "host": "demo.traveport-test.de",
   "schemes": [
     "https"
   ],
@@ -16,7 +16,7 @@
     "application/json;odata=verbose"
   ],
   "paths": {
-    "/sites/{siteCollection}/_api/web/lists/GetByTitle('{listName}')/items": {
+    "/raumgruppen/{siteCollection}/_api/web/lists/GetByTitle('{listName}')/items": {
       "post": {
         "summary": "Create new list item",
         "description": "Creates a new item in the specified SharePoint list",
