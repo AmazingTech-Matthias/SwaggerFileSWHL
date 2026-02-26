@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint OnPrem API"
+  },
+  "host": "demo.traveport-test.de",
+  "schemes": ["https"],
+  "consumes": ["application/json;odata=verbose"],
+  "produces": ["application/json;odata=verbose"],
+  "paths": {
+    "/raumgruppen/{siteCollection}/_api/contextinfo": {
+      "post": {
+        "operationId": "GetContextInfo",
+        "parameters": [
+          {
+            "name": "siteCollection",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns FormDigest",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "d": {
+                  "type": "object",
+                  "properties": {
+                    "GetContextWebInformation": {
+                      "type": "object",
+                      "properties": {
+                        "FormDigestValue": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
