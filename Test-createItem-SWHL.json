@@ -68,10 +68,8 @@
         ],
         "responses": {
           "201": {
-            "description": "Item created successfully",
-            "schema": {
-              "$ref": "#/definitions/CreateItemResponse"
-            }
+            "description": "Item created successfully"
+            
           }
         }
       }
@@ -101,23 +99,6 @@
         "Description": {
           "type": "string",
           "example": "Item description here"
-        }
-      }
-    },
-    "CreateItemResponse": {
-      "type": "object",
-      "properties": {
-        "d": {
-          "type": "object",
-          "properties": {
-            "Id": {
-              "type": "integer",
-              "example": 1
-            },
-            "Title": {
-              "type": "string"
-            }
-          }
         }
       }
     }
