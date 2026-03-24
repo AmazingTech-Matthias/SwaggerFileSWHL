@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "SP Get Item",
+    "title": "Traveflow SP Get Item",
     "version": "1.0"
   },
   "host": "/testtraveflow.traveport-test.de",
