@@ -5,7 +5,7 @@
 		"description": "API for SharePoint List Items",
 		"version": "1.0.0.0"
 	},
-	"host": "demo.traveport-test.de",
+	"host": "testtraveflow.traveport-test.de",
 	"schemes": ["https"],
 	"paths": {
 		"/{SiteUrl}/_api/web/lists/GetByTitle('{ListTitle}')/items": {
@@ -21,7 +21,8 @@
 						"required": true,
 						"type": "string",
 						"x-example": "Sales"
-					}, {
+					}, 
+                    {
 						"name": "ListTitle",
 						"in": "path",
 						"description": "List title",
@@ -34,39 +35,43 @@
 					"200": {
 						"description": "Get list item by Site URL, List Title and List Item Id",
 						"schema": {
-							"type": "array",
-							"items":{
-							"$ref": "#/definitions/GetListItems"
-							    }
-						 }
-                },
-                "401": {
-              "description": "Unauthorized – authentication failed or missing"
-                      },
-                "404": {
-              "description": "Not Found – site or list does not exist"
-                  }
+							"$ref": "#/definitions/GetListItemsResponse"
+						}
+					},
+					"401": {
+						"description": "Unauthorized – authentication failed or missing"
+					},
+					"404": {
+						"description": "Not Found – site or list does not exist"
+					}
 				}
 			}
 			
 		}
 	},
 	"definitions": {
-		"GetListItems": {
-			"x-k2-displayName": "retrieving Items",
-			"description": "retrieving Items",
-			"required": ["Id"],
+		"GetListItemsResponse": {
+			"type":"object",
 			"properties": {
-				"Id": {
-					"type": "integer",
-					"format": "int32",
-					"x-example": "1"
-				},
-				"Title": {
-					"type": "string",
-					"x-example": "Test deck"
+				"value": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ListItem"
+					}
 				}
+			}
+		},
+		"ListItem": {
+			"type":"object",
+			"description": "Retrieving Items",
+			"properties": {
+				"Id": { "type": "integer" },
+				"Title": { "type": "string"	},
+				"Modified": { "type": "string", "format": "date-time" },
+          		"Created": { "type": "string", "format": "date-time" },
+
 			}
 		}
 	}
 }
+  
