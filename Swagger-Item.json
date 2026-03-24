@@ -4,15 +4,21 @@
     "title": "SP Get Item",
     "version": "1.0"
   },
-  "host": "demo.traveport-test.de",
-  "basePath": "/raeume/projekt-54",
+  "host": "/testtraveflow.traveport-test.de",
+  "basePath": "",
   "schemes": ["https"],
   "produces": ["application/json"],
   "paths": {
-    "/_api/web/lists/GetByTitle('{listTitle}')/items({itemId})": {
+    "/{SiteUrl}/_api/web/lists/GetByTitle('{listTitle}')/items({itemId})": {
       "get": {
         "operationId": "GetItem",
         "parameters": [
+           {
+            "name": "SiteUrl",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "listTitle",
             "in": "path",
@@ -43,8 +49,7 @@
       "properties": {
         "Id": { "type": "integer" },
         "Title": { "type": "string" }
-      },
-      "additionalProperties": true
+      }
     }
   }
 
