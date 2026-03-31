@@ -20,13 +20,6 @@
             "required": true,
             "type": "string",
             "default": "Title"
-          },
-          {
-            "name": "$format",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "default": "json"
           }
         ],
         "responses": {
