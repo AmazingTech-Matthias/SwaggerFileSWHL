@@ -38,8 +38,7 @@
       "type": "object",
       "properties": {
         "Title": {
-          "type": "string",
-          "example": "TraveFlow TraveNetz Test"
+          "type": "string"
         }
       }
     }
