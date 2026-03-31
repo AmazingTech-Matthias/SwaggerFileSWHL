@@ -45,8 +45,9 @@
   "definitions": {
     "CreateItemRequest": {
       "type": "object",
+      "required": ["__metadata", "Title"],
       "properties": {
-        "__metadata.type": {
+        "__metadata": {
           "type": "string",
           "example": "SP.Data.TestMatthiasListItem"
         },
