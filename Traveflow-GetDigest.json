@@ -1,0 +1,54 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint Context API"
+  },
+  "host": "testtraveflow.traveport-test.de",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/_api/contextinfo": {
+      "post": {
+        "operationId": "GetDigest Traveflow",
+        "responses": {
+          "200": {
+            "description": "Digest response",
+            "schema": {
+              "$ref": "#/definitions/ContextInfoResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ContextWebInformation": {
+      "type": "object",
+      "properties": {
+        "FormDigestValue": {
+          "type": "string"
+        },
+        "FormDigestTimeoutSeconds": {
+          "type": "integer"
+        }
+      }
+    },
+    "ContextInfoInner": {
+      "type": "object",
+      "properties": {
+        "GetContextWebInformation": {
+          "$ref": "#/definitions/ContextWebInformation"
+        }
+      }
+    },
+    "ContextInfoResponse": {
+      "type": "object",
+      "properties": {
+        "d": {
+          "$ref": "#/definitions/ContextInfoInner"
+        }
+      }
+    }
+  }
+}
