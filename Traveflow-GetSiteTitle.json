@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint Site API"
+  },
+  "host": "testtraveflow.traveport-test.de/",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/_api/web": {
+      "get": {
+        "operationId": "GetSiteTitle",
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "Title"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Web"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Web": {
+      "type": "object",
+      "properties": {
+        "Title": {
+          "type": "string",
+          "example": "TraveFlow TraveNetz Test"
+        }
+      }
+    }
+  }
+}
