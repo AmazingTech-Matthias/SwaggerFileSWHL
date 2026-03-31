@@ -1,0 +1,83 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint List API"
+  },
+  "host": "testtraveflow.traveport-test.de",
+  "basePath": "/",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json;odata=verbose"],
+  "paths": {
+    "/_api/web/lists/getbytitle('{listTitle}')/items": {
+      "post": {
+        "operationId": "CreateListItem",
+        "summary": "Create a new list item",
+        "parameters": [
+          {
+            "name": "listTitle",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "default": "Test"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateItemRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Item created",
+            "schema": {
+              "$ref": "#/definitions/CreateItemResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateItemRequest": {
+      "type": "object",
+      "properties": {
+        "__metadata": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "example": "SP.Data.TestListItem"
+            }
+          }
+        },
+        "Title": {
+          "type": "string",
+          "example": "Created via API"
+        }
+      },
+      "required": ["__metadata", "Title"]
+    },
+    "CreateItemResponse": {
+      "type": "object",
+      "properties": {
+        "d": {
+          "type": "object",
+          "properties": {
+            "Id": {
+              "type": "integer"
+            },
+            "Title": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+🔧 How the actual HTTP call looks
