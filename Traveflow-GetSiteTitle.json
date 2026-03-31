@@ -7,6 +7,8 @@
   "host": "testtraveflow.traveport-test.de",
   "basePath": "/",
   "schemes": ["https"],
+  "consumes": [],
+  "produces": ["application/json"],
   "paths": {
     "/_api/web": {
       "get": {
