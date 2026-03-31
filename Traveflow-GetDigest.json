@@ -7,15 +7,18 @@
   "host": "testtraveflow.traveport-test.de",
   "basePath": "/",
   "schemes": ["https"],
+  "consumes": [],
+  "produces": ["application/json", "application/json;odata=verbose"],
   "paths": {
     "/_api/contextinfo": {
       "post": {
-        "operationId": "GetDigest Traveflow",
+        "operationId": "GetDigest",
+        "summary": "Retrieve SharePoint request digest",
         "responses": {
           "200": {
             "description": "Digest response",
             "schema": {
-              "$ref": "#/definitions/ContextInfoResponse"
+              "$ref": "#/definitions/ContextInfo"
             }
           }
         }
@@ -23,30 +26,34 @@
     }
   },
   "definitions": {
-    "ContextWebInformation": {
+    "ContextInfo": {
       "type": "object",
       "properties": {
         "FormDigestValue": {
-          "type": "string"
+          "type": "string",
+          "example": "0x16AE2C8DA4C4E87126F72AA2277D25F4EC49E..."
         },
         "FormDigestTimeoutSeconds": {
-          "type": "integer"
-        }
-      }
-    },
-    "ContextInfoInner": {
-      "type": "object",
-      "properties": {
-        "GetContextWebInformation": {
-          "$ref": "#/definitions/ContextWebInformation"
-        }
-      }
-    },
-    "ContextInfoResponse": {
-      "type": "object",
-      "properties": {
-        "d": {
-          "$ref": "#/definitions/ContextInfoInner"
+          "type": "integer",
+          "example": 1800
+        },
+        "LibraryVersion": {
+          "type": "string",
+          "example": "16.0.10417.20102"
+        },
+        "SiteFullUrl": {
+          "type": "string",
+          "example": "https://testtraveflow.traveport-test.de/raumgruppen/Cockpit-1"
+        },
+        "WebFullUrl": {
+          "type": "string",
+          "example": "https://testtraveflow.traveport-test.de/raumgruppen/Cockpit-1"
+        },
+        "SupportedSchemaVersions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     }
