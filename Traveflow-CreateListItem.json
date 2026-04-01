@@ -5,12 +5,12 @@
     "title": "SharePoint List API"
   },
   "host": "testtraveflow.traveport-test.de",
-  "basePath": "/",
+  "basePath": "",
   "schemes": ["https"],
   "consumes": ["application/json", "application/json;odata=verbose"],
   "produces": ["application/json", "application/json;odata=verbose"],
   "paths": {
-    "/_api/web/lists/getbytitle('{listTitle}')/items": {
+    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{listTitle}')/items": {
       "post": {
         "operationId": "CreateListItem",
         "parameters": [
@@ -20,6 +20,13 @@
             "required": true,
             "type": "string",
             "default": "TestMatthias"
+          },
+          {
+            "name": "X-Request-Digest",
+             "in": "header",
+            "description": "Form digest value required for write operations",
+            "required": true,
+            "type": "string"
           },
           {
             "name": "body",
