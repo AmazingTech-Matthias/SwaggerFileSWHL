@@ -14,7 +14,7 @@
       "post": {
         "operationId": "GetDigest",
         "summary": "Retrieve SharePoint request digest",
-         "parameters": [
+        "parameters": [
           {
             "name": "siteCollection",
             "in": "path",
@@ -26,7 +26,7 @@
           "200": {
             "description": "Digest response",
             "schema": {
-              "$ref": "#/definitions/ContextInfo"
+              "$ref": "#/definitions/ContextInfoResponse"
             }
           }
         }
@@ -34,28 +34,35 @@
     }
   },
   "definitions": {
-    "ContextInfo": {
+    "ContextInfoResponse": {
       "type": "object",
       "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResponseItems"
+          }
+        }
+      }
+    },
+    "ResponseItems": {
+      "type": "object",
+      "description": "Retrieving properties",
+      "properties": {
         "FormDigestValue": {
-          "type": "string",
-          "example": "0x16AE2C8DA4C4E87126F72AA2277D25F4EC49E..."
+          "type": "string"
         },
         "FormDigestTimeoutSeconds": {
-          "type": "integer",
-          "example": 1800
+          "type": "integer"
         },
         "LibraryVersion": {
-          "type": "string",
-          "example": "16.0.10417.20102"
+          "type": "string"
         },
         "SiteFullUrl": {
-          "type": "string",
-          "example": "https://testtraveflow.traveport-test.de/raumgruppen/Cockpit-1"
+          "type": "string"
         },
         "WebFullUrl": {
-          "type": "string",
-          "example": "https://testtraveflow.traveport-test.de/raumgruppen/Cockpit-1"
+          "type": "string"
         }
       }
     }
