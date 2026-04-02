@@ -20,12 +20,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": false,
-            "type": "string"
           }
         ],
         "responses": {
