@@ -7,7 +7,7 @@
   "host": "testtraveflow.traveport-test.de",
   "basePath": "",
   "schemes": ["https"],
-  "consumes": [],
+  "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
     "/raumgruppen/{siteCollection}/_api/contextinfo": {
@@ -24,16 +24,16 @@
           {
             "name": "Accept",
             "in": "header",
-            "required": true,
-            "type": "string",
-            "default": "application/json;odata=nometadata"
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "Raw JSON response as string",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "byte"
             }
           }
         }
