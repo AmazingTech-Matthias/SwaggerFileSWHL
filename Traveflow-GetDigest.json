@@ -5,12 +5,12 @@
     "title": "SharePoint Context API"
   },
   "host": "testtraveflow.traveport-test.de",
-  "basePath": "/",
+  "basePath": "",
   "schemes": ["https"],
   "consumes": [],
   "produces": ["application/json", "application/json;odata=verbose"],
   "paths": {
-    "/_api/contextinfo": {
+    "/raumgruppen/Cockpit-1/_api/contextinfo": {
       "post": {
         "operationId": "GetDigest",
         "summary": "Retrieve SharePoint request digest",
