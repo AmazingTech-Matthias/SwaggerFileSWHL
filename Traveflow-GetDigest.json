@@ -24,9 +24,9 @@
         ],
         "responses": {
           "200": {
-            "description": "Digest response",
+            "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/ContextInfoResponse"
+              "$ref": "#/definitions/FormDigestResponse"
             }
           }
         }
@@ -34,32 +34,24 @@
     }
   },
   "definitions": {
-    "ContextInfoResponse": {
+    "FormDigestResponse": {
       "type": "object",
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ResponseItems"
-          }
-        }
-      }
-    },
-    "ResponseItems": {
-      "type": "object",
-      "description": "Retrieving properties",
       "properties": {
         "FormDigestValue": {
-          "type": "string"
+          "type": "string",
+          "example": "0x123ABCDEF..."
         },
         "FormDigestTimeoutSeconds": {
-          "type": "integer"
+          "type": "integer",
+          "example": 1800
         },
         "LibraryVersion": {
-          "type": "string"
+          "type": "string",
+          "example": "16.0.10337.12109"
         },
         "SiteFullUrl": {
-          "type": "string"
+          "type": "string",
+          "example": "https://testtraveflow.traveport-test.de/raumgruppen/site"
         },
         "WebFullUrl": {
           "type": "string"
