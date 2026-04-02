@@ -32,8 +32,7 @@
           "200": {
             "description": "Raw JSON response as string",
             "schema": {
-              "type": "string",
-              "format": "byte"
+              "type": "string"
             }
           }
         }
