@@ -1,0 +1,43 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint Context API (Raw)"
+  },
+  "host": "testtraveflow.traveport-test.de",
+  "basePath": "",
+  "schemes": ["https"],
+  "consumes": [],
+  "produces": ["application/json"],
+  "paths": {
+    "/raumgruppen/{siteCollection}/_api/contextinfo": {
+      "post": {
+        "operationId": "GetDigestRaw",
+        "summary": "Retrieve SharePoint request digest as raw string",
+        "parameters": [
+          {
+            "name": "siteCollection",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json;odata=nometadata"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Raw JSON response as string",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
