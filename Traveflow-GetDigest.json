@@ -48,12 +48,6 @@
         "WebFullUrl": {
           "type": "string",
           "example": "https://testtraveflow.traveport-test.de/raumgruppen/Cockpit-1"
-        },
-        "SupportedSchemaVersions": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
         }
       }
     }
