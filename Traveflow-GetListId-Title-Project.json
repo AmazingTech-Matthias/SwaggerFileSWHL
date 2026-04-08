@@ -1,0 +1,54 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SharePoint Site API ID"
+  },
+  "host": "testtraveflow.traveport-test.de",
+  "basePath": "",
+  "schemes": ["https"],
+  "consumes": [],
+  "produces": ["application/json"],
+  "paths": {
+    "/'{ProjectSite}'/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id,Title": {
+      "get": {
+        "operationId": "GetListID",
+        "parameters": [
+		  {
+            "name": "ListTitle",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+		   {
+            "name": "ProjectSite",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ListResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ListResponse": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
