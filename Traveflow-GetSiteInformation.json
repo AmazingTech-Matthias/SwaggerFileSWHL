@@ -10,16 +10,15 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/{ProjectSite}/_api/web?$select=Url,ServerRelativeUrl": {
+    "/{ProjectSite}/_api/web?$select=Url,ServerRelativeUrl,Title": {
       "get": {
         "operationId": "GetSiteInformation",
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
+            "name": "ProjectSite",
+            "in": "path",
             "required": true,
-            "type": "string",
-            "default": "Title"
+            "type": "string"
           }
         ],
         "responses": {
