@@ -10,17 +10,10 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')/?": {
+    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id": {
       "get": {
         "operationId": "GetListID",
         "parameters": [
-		 {
-            "name": "$select",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "default": "Id"
-          },  
 		  {
             "name": "ListTitle",
             "in": "path",
@@ -32,7 +25,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/Web"
+              "$ref": "#/definitions/ListResponse"
             }
           }
         }
@@ -40,10 +33,10 @@
     }
   },
   "definitions": {
-    "Web": {
+    "ListResponse": {
       "type": "object",
       "properties": {
-        "Title": {
+        "Id": {
           "type": "string"
         }
       }
