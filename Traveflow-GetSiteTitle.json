@@ -5,14 +5,14 @@
     "title": "SharePoint Site API"
   },
   "host": "testtraveflow.traveport-test.de",
-  "basePath": "/",
+  "basePath": "",
   "schemes": ["https"],
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/_api/web": {
+    "/{ProjectSite}/_api/web?$select=Url,ServerRelativeUrl": {
       "get": {
-        "operationId": "GetSiteTitle",
+        "operationId": "GetSiteInformation",
         "parameters": [
           {
             "name": "$select",
@@ -26,7 +26,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/Web"
+              "$ref": "#/definitions/SiteInformation"
             }
           }
         }
@@ -34,12 +34,18 @@
     }
   },
   "definitions": {
-    "Web": {
+    "SiteInformation": {
       "type": "object",
       "properties": {
         "Title": {
           "type": "string"
-        }
+        },
+        "Url": {
+      "type": "string"
+            },
+        "ServerRelativeUrl": {
+        "type": "string"
+         }
       }
     }
   }
