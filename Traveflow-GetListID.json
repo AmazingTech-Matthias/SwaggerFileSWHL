@@ -10,7 +10,7 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')": {
+    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')/?": {
       "get": {
         "operationId": "GetListID",
         "parameters": [
