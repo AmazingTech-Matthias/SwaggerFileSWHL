@@ -10,7 +10,7 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id": {
+    "/raumgruppen/Cockpit-1/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id,Title": {
       "get": {
         "operationId": "GetListID",
         "parameters": [
@@ -37,6 +37,9 @@
       "type": "object",
       "properties": {
         "Id": {
+          "type": "string"
+        },,
+        "Title": {
           "type": "string"
         }
       }
