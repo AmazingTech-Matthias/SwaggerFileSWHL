@@ -10,7 +10,7 @@
   "consumes": [],
   "produces": ["application/json"],
   "paths": {
-    "/'{ProjectSite}'/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id,Title": {
+    "/{ProjectSite}/_api/web/lists/getbytitle('{ListTitle}')/?$select=Id,Title": {
       "get": {
         "operationId": "GetListID",
         "parameters": [
